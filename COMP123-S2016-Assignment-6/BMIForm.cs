@@ -45,7 +45,7 @@ namespace COMP123_S2016_Assignment_6
                 height = Convert.ToDouble(HeightTextBox.Text);
                 weight = Convert.ToDouble(WeightTextBox.Text);
 
-                if (height<=0 || weight<=0)
+                if ((height <= 0 || weight <= 0) || (height <= 0) || (weight <= 0))
                 {
                     MessageBox.Show("Numbers can not be less or equal to 0");
 
@@ -59,56 +59,72 @@ namespace COMP123_S2016_Assignment_6
                         WeightTextBox.Clear();
                         WeightTextBox.Focus();
                     }
-                                 
-                }
-
-
-                if (ImperialRadioButton.Checked==true)
-                {                  
-                    bmi = ((weight * 703)) / ((height * height));                  
-                    ResultTextBox.Text = Convert.ToString(bmi);
-                    HeightTextBox.Enabled = false;
-                    WeightTextBox.Enabled = false;
-
-                    if (bmi<18.5)
-                    {
-                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
-                    }
-
-                    if ((bmi > 18.5)&&(bmi<24.9))
-                    {
-                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
-                    }
-
-                    if (bmi < 18.5)
-                    {
-                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
-                    }
-
-                    if (bmi < 18.5)
-                    {
-                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
-                    }
 
                 }
 
-                if (MetricRadioButton.Checked==true)
-                {                   
-                    bmi = (weight / (height*height));
-                    ResultTextBox.Text = Convert.ToString(bmi);
-                    HeightTextBox.Enabled = false;
-                    WeightTextBox.Enabled = false;
+                else {
 
-                    if (bmi < 18.5)
+                    if (ImperialRadioButton.Checked == true)
                     {
-                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                        bmi = ((weight * 703)) / ((height * height));
+                        ResultTextBox.Text = Convert.ToString(bmi);
+                        HeightTextBox.Enabled = false;
+                        WeightTextBox.Enabled = false;
+
+                        if (bmi < 18.5)
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                        }
+
+                        if ((bmi > 18.5) && (bmi < 24.9))
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Normal");
+                        }
+
+                        if ((bmi > 25) && (bmi < 29.9))
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Overweight");
+                        }
+
+                        if (bmi > 30)
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Obese");
+                        }
+
                     }
+
+                    if (MetricRadioButton.Checked == true)
+                    {
+                        bmi = (weight / (height * height));
+                        ResultTextBox.Text = Convert.ToString(bmi);
+                        HeightTextBox.Enabled = false;
+                        WeightTextBox.Enabled = false;
+
+                        if (bmi < 18.5)
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                        }
+
+                        if ((bmi > 18.5) && (bmi < 24.9))
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Normal");
+                        }
+
+                        if ((bmi > 25) && (bmi < 29.9))
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Overweight");
+                        }
+
+                        if (bmi > 30)
+                        {
+                            ResultInfoTextBox.Text = Convert.ToString("Obese");
+                        }
+                    }
+
+
+
+
                 }
-
-                
-
-
-
             }
             catch (Exception)
             {
