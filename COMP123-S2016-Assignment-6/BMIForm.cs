@@ -27,32 +27,92 @@ namespace COMP123_S2016_Assignment_6
             
             try
             {
-
                 if (HeightTextBox.Text == "" || WeightTextBox.Text == "")
-                {
+                {                   
                     MessageBox.Show("Fields can not be empty, please fill it out");
-                    HeightTextBox.Focus();
-                    HeightTextBox.SelectAll();
+
+                    if ((HeightTextBox.Text == "") || (HeightTextBox.Text == "" && WeightTextBox.Text == ""))
+                    {
+                        HeightTextBox.Focus();
+                    }
+                    else
+                    {
+                        WeightTextBox.Focus();
+                    }
+                        
                 }
 
                 height = Convert.ToDouble(HeightTextBox.Text);
                 weight = Convert.ToDouble(WeightTextBox.Text);
 
-                if (height <= 0 || weight <= 0)
+                if (height<=0 || weight<=0)
                 {
-                    MessageBox.Show("Fields can not be equal or less than 0");
-                    HeightTextBox.Focus();
-                    HeightTextBox.SelectAll();
+                    MessageBox.Show("Numbers can not be less or equal to 0");
+
+                    if ((height <= 0) || (height <= 0 && weight <= 0))
+                    {
+                        HeightTextBox.Clear();
+                        HeightTextBox.Focus();
+                    }
+                    else
+                    {
+                        WeightTextBox.Clear();
+                        WeightTextBox.Focus();
+                    }
+                                 
                 }
 
 
+                if (ImperialRadioButton.Checked==true)
+                {                  
+                    bmi = ((weight * 703)) / ((height * height));                  
+                    ResultTextBox.Text = Convert.ToString(bmi);
+                    HeightTextBox.Enabled = false;
+                    WeightTextBox.Enabled = false;
+
+                    if (bmi<18.5)
+                    {
+                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                    }
+
+                    if ((bmi > 18.5)&&(bmi<24.9))
+                    {
+                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                    }
+
+                    if (bmi < 18.5)
+                    {
+                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                    }
+
+                    if (bmi < 18.5)
+                    {
+                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                    }
+
+                }
+
+                if (MetricRadioButton.Checked==true)
+                {                   
+                    bmi = (weight / (height*height));
+                    ResultTextBox.Text = Convert.ToString(bmi);
+                    HeightTextBox.Enabled = false;
+                    WeightTextBox.Enabled = false;
+
+                    if (bmi < 18.5)
+                    {
+                        ResultInfoTextBox.Text = Convert.ToString("Underweight");
+                    }
+                }
+
+                
 
 
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Error. Press OK to continue");
+                MessageBox.Show("Press OK to continue");
             }
         }
 
@@ -63,6 +123,7 @@ namespace COMP123_S2016_Assignment_6
             HeightTextBox.Text = "";
             WeightTextBox.Text = "";
             ResultTextBox.Text = "";
+            ResultInfoTextBox.Clear();
 
             //ENABLE TEXTBOXES
             HeightTextBox.Enabled = true;

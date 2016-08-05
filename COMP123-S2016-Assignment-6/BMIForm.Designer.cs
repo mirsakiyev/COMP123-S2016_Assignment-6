@@ -45,6 +45,7 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.ResultBMILabel = new System.Windows.Forms.Label();
             this.ResultTextBox = new System.Windows.Forms.TextBox();
+            this.ResultInfoTextBox = new System.Windows.Forms.TextBox();
             this.UnitsGroupBox.SuspendLayout();
             this.HeightWeightGroupBox.SuspendLayout();
             this.InfoGroupBox.SuspendLayout();
@@ -93,7 +94,7 @@
             // 
             this.HeightLabel.AutoSize = true;
             this.HeightLabel.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightLabel.Location = new System.Drawing.Point(10, 76);
+            this.HeightLabel.Location = new System.Drawing.Point(10, 101);
             this.HeightLabel.Name = "HeightLabel";
             this.HeightLabel.Size = new System.Drawing.Size(76, 21);
             this.HeightLabel.TabIndex = 1;
@@ -103,7 +104,7 @@
             // 
             this.WeightLabel.AutoSize = true;
             this.WeightLabel.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeightLabel.Location = new System.Drawing.Point(10, 124);
+            this.WeightLabel.Location = new System.Drawing.Point(10, 149);
             this.WeightLabel.Name = "WeightLabel";
             this.WeightLabel.Size = new System.Drawing.Size(76, 21);
             this.WeightLabel.TabIndex = 2;
@@ -117,23 +118,23 @@
             this.HeightWeightGroupBox.Controls.Add(this.HeightLabel);
             this.HeightWeightGroupBox.Controls.Add(this.WeightLabel);
             this.HeightWeightGroupBox.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightWeightGroupBox.Location = new System.Drawing.Point(19, 178);
+            this.HeightWeightGroupBox.Location = new System.Drawing.Point(19, 163);
             this.HeightWeightGroupBox.Name = "HeightWeightGroupBox";
-            this.HeightWeightGroupBox.Size = new System.Drawing.Size(184, 164);
+            this.HeightWeightGroupBox.Size = new System.Drawing.Size(184, 189);
             this.HeightWeightGroupBox.TabIndex = 3;
             this.HeightWeightGroupBox.TabStop = false;
-            this.HeightWeightGroupBox.Text = "Enter your height and weight";
+            this.HeightWeightGroupBox.Text = "Enter your height(m or inch) and weight(kg or lb)";
             // 
             // WeightTextBox
             // 
-            this.WeightTextBox.Location = new System.Drawing.Point(93, 124);
+            this.WeightTextBox.Location = new System.Drawing.Point(93, 149);
             this.WeightTextBox.Name = "WeightTextBox";
             this.WeightTextBox.Size = new System.Drawing.Size(85, 28);
             this.WeightTextBox.TabIndex = 4;
             // 
             // HeightTextBox
             // 
-            this.HeightTextBox.Location = new System.Drawing.Point(92, 69);
+            this.HeightTextBox.Location = new System.Drawing.Point(92, 94);
             this.HeightTextBox.Name = "HeightTextBox";
             this.HeightTextBox.Size = new System.Drawing.Size(86, 28);
             this.HeightTextBox.TabIndex = 3;
@@ -231,12 +232,23 @@
             this.ResultTextBox.Size = new System.Drawing.Size(225, 38);
             this.ResultTextBox.TabIndex = 8;
             // 
+            // ResultInfoTextBox
+            // 
+            this.ResultInfoTextBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.ResultInfoTextBox.Enabled = false;
+            this.ResultInfoTextBox.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultInfoTextBox.Location = new System.Drawing.Point(229, 249);
+            this.ResultInfoTextBox.Name = "ResultInfoTextBox";
+            this.ResultInfoTextBox.Size = new System.Drawing.Size(226, 34);
+            this.ResultInfoTextBox.TabIndex = 9;
+            // 
             // BMIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(477, 517);
+            this.Controls.Add(this.ResultInfoTextBox);
             this.Controls.Add(this.ResultTextBox);
             this.Controls.Add(this.ResultBMILabel);
             this.Controls.Add(this.ClearButton);
@@ -278,6 +290,7 @@
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label ResultBMILabel;
         private System.Windows.Forms.TextBox ResultTextBox;
+        private System.Windows.Forms.TextBox ResultInfoTextBox;
     }
 }
 
