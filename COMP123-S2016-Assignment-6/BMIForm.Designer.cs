@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BMIForm));
             this.UnitsGroupBox = new System.Windows.Forms.GroupBox();
             this.MetricRadioButton = new System.Windows.Forms.RadioButton();
             this.ImperialRadioButton = new System.Windows.Forms.RadioButton();
@@ -46,9 +47,13 @@
             this.ResultBMILabel = new System.Windows.Forms.Label();
             this.ResultTextBox = new System.Windows.Forms.TextBox();
             this.ResultInfoTextBox = new System.Windows.Forms.TextBox();
+            this.linkLabel = new System.Windows.Forms.LinkLabel();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UnitsGroupBox.SuspendLayout();
             this.HeightWeightGroupBox.SuspendLayout();
             this.InfoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // UnitsGroupBox
@@ -57,7 +62,7 @@
             this.UnitsGroupBox.Controls.Add(this.MetricRadioButton);
             this.UnitsGroupBox.Controls.Add(this.ImperialRadioButton);
             this.UnitsGroupBox.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitsGroupBox.Location = new System.Drawing.Point(19, 22);
+            this.UnitsGroupBox.Location = new System.Drawing.Point(19, 96);
             this.UnitsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.UnitsGroupBox.Name = "UnitsGroupBox";
             this.UnitsGroupBox.Padding = new System.Windows.Forms.Padding(4);
@@ -118,7 +123,7 @@
             this.HeightWeightGroupBox.Controls.Add(this.HeightLabel);
             this.HeightWeightGroupBox.Controls.Add(this.WeightLabel);
             this.HeightWeightGroupBox.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeightWeightGroupBox.Location = new System.Drawing.Point(19, 163);
+            this.HeightWeightGroupBox.Location = new System.Drawing.Point(19, 237);
             this.HeightWeightGroupBox.Name = "HeightWeightGroupBox";
             this.HeightWeightGroupBox.Size = new System.Drawing.Size(184, 189);
             this.HeightWeightGroupBox.TabIndex = 3;
@@ -147,7 +152,7 @@
             this.InfoGroupBox.Controls.Add(this.NormalLabel);
             this.InfoGroupBox.Controls.Add(this.UnderweightLabel);
             this.InfoGroupBox.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InfoGroupBox.Location = new System.Drawing.Point(219, 22);
+            this.InfoGroupBox.Location = new System.Drawing.Point(219, 96);
             this.InfoGroupBox.Name = "InfoGroupBox";
             this.InfoGroupBox.Size = new System.Drawing.Size(236, 124);
             this.InfoGroupBox.TabIndex = 4;
@@ -193,9 +198,9 @@
             // SubmitButton
             // 
             this.SubmitButton.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitButton.Location = new System.Drawing.Point(229, 306);
+            this.SubmitButton.Location = new System.Drawing.Point(230, 375);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(106, 36);
+            this.SubmitButton.Size = new System.Drawing.Size(106, 51);
             this.SubmitButton.TabIndex = 5;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
@@ -204,9 +209,9 @@
             // ClearButton
             // 
             this.ClearButton.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearButton.Location = new System.Drawing.Point(358, 306);
+            this.ClearButton.Location = new System.Drawing.Point(349, 375);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(106, 36);
+            this.ClearButton.Size = new System.Drawing.Size(106, 51);
             this.ClearButton.TabIndex = 6;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -216,7 +221,7 @@
             // 
             this.ResultBMILabel.AutoSize = true;
             this.ResultBMILabel.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultBMILabel.Location = new System.Drawing.Point(225, 178);
+            this.ResultBMILabel.Location = new System.Drawing.Point(225, 252);
             this.ResultBMILabel.Name = "ResultBMILabel";
             this.ResultBMILabel.Size = new System.Drawing.Size(138, 27);
             this.ResultBMILabel.TabIndex = 7;
@@ -226,7 +231,7 @@
             // 
             this.ResultTextBox.BackColor = System.Drawing.Color.Turquoise;
             this.ResultTextBox.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultTextBox.Location = new System.Drawing.Point(230, 208);
+            this.ResultTextBox.Location = new System.Drawing.Point(230, 282);
             this.ResultTextBox.Name = "ResultTextBox";
             this.ResultTextBox.ReadOnly = true;
             this.ResultTextBox.Size = new System.Drawing.Size(225, 38);
@@ -234,20 +239,58 @@
             // 
             // ResultInfoTextBox
             // 
-            this.ResultInfoTextBox.BackColor = System.Drawing.SystemColors.Menu;
+            this.ResultInfoTextBox.BackColor = System.Drawing.Color.LightSlateGray;
             this.ResultInfoTextBox.Enabled = false;
-            this.ResultInfoTextBox.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultInfoTextBox.Location = new System.Drawing.Point(229, 249);
+            this.ResultInfoTextBox.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultInfoTextBox.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.ResultInfoTextBox.Location = new System.Drawing.Point(229, 323);
             this.ResultInfoTextBox.Name = "ResultInfoTextBox";
             this.ResultInfoTextBox.Size = new System.Drawing.Size(226, 34);
             this.ResultInfoTextBox.TabIndex = 9;
+            // 
+            // linkLabel
+            // 
+            this.linkLabel.AutoSize = true;
+            this.linkLabel.Font = new System.Drawing.Font("Sitka Banner", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel.LinkColor = System.Drawing.Color.White;
+            this.linkLabel.Location = new System.Drawing.Point(14, 477);
+            this.linkLabel.Name = "linkLabel";
+            this.linkLabel.Size = new System.Drawing.Size(196, 28);
+            this.linkLabel.TabIndex = 10;
+            this.linkLabel.TabStop = true;
+            this.linkLabel.Text = "Subscribe to my GitHub";
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.Location = new System.Drawing.Point(349, 469);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(106, 36);
+            this.ExitButton.TabIndex = 11;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(19, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(436, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // BMIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(477, 517);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.linkLabel);
             this.Controls.Add(this.ResultInfoTextBox);
             this.Controls.Add(this.ResultTextBox);
             this.Controls.Add(this.ResultBMILabel);
@@ -266,6 +309,7 @@
             this.HeightWeightGroupBox.PerformLayout();
             this.InfoGroupBox.ResumeLayout(false);
             this.InfoGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,6 +335,9 @@
         private System.Windows.Forms.Label ResultBMILabel;
         private System.Windows.Forms.TextBox ResultTextBox;
         private System.Windows.Forms.TextBox ResultInfoTextBox;
+        private System.Windows.Forms.LinkLabel linkLabel;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

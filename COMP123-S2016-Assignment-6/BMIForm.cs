@@ -27,6 +27,7 @@ namespace COMP123_S2016_Assignment_6
             
             try
             {
+
                 if (HeightTextBox.Text == "" || WeightTextBox.Text == "")
                 {                   
                     MessageBox.Show("Fields can not be empty, please fill it out");
@@ -41,6 +42,21 @@ namespace COMP123_S2016_Assignment_6
                     }
                         
                 }
+
+
+                try
+                {
+                    height = Convert.ToDouble(HeightTextBox.Text);
+                    weight = Convert.ToDouble(WeightTextBox.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please type numbers");
+                    HeightTextBox.Clear();
+                    WeightTextBox.Clear();
+                    HeightTextBox.Focus();
+                }
+
 
                 height = Convert.ToDouble(HeightTextBox.Text);
                 weight = Convert.ToDouble(WeightTextBox.Text);
@@ -145,5 +161,17 @@ namespace COMP123_S2016_Assignment_6
             HeightTextBox.Enabled = true;
             WeightTextBox.Enabled = true;
         }
+
+        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {           
+            this.linkLabel.LinkVisited = true;           
+            System.Diagnostics.Process.Start("https://github.com/mirsakiyev");
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+      
     }
 }
