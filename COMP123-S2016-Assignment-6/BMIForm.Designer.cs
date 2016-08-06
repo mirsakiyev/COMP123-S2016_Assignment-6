@@ -245,6 +245,7 @@
             this.ResultInfoTextBox.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.ResultInfoTextBox.Location = new System.Drawing.Point(229, 323);
             this.ResultInfoTextBox.Name = "ResultInfoTextBox";
+            this.ResultInfoTextBox.ReadOnly = true;
             this.ResultInfoTextBox.Size = new System.Drawing.Size(226, 34);
             this.ResultInfoTextBox.TabIndex = 9;
             // 
@@ -299,9 +300,14 @@
             this.Controls.Add(this.InfoGroupBox);
             this.Controls.Add(this.HeightWeightGroupBox);
             this.Controls.Add(this.UnitsGroupBox);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Segoe Script", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "BMIForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
             this.UnitsGroupBox.ResumeLayout(false);
             this.UnitsGroupBox.PerformLayout();

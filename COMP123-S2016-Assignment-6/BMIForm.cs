@@ -8,6 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/**
+ * Assignment #6
+ * Author : Aslan Mirsakiyev
+ * Student ID : 300850326
+ * Date : 08.05.2016
+ * Submitted to : Tom Tsiliopoulos
+ * GitHub link : https://github.com/mirsakiyev/COMP123-S2016_Assignment-6
+ *
+ */
 namespace COMP123_S2016_Assignment_6
 {
     public partial class BMIForm : Form
@@ -17,20 +26,21 @@ namespace COMP123_S2016_Assignment_6
             InitializeComponent();
         }
 
+        // SUBMIT BUTTON
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            
+            //initialize variables
             double height;
             double weight;
             double bmi;
 
-            
+            // try catch block
             try
             {
-
+                // Fields cannot be empty, checking it
                 if (HeightTextBox.Text == "" || WeightTextBox.Text == "")
                 {                   
-                    MessageBox.Show("Fields can not be empty, please fill it out");
+                    MessageBox.Show("Fields can not be empty, please fill them out");
 
                     if ((HeightTextBox.Text == "") || (HeightTextBox.Text == "" && WeightTextBox.Text == ""))
                     {
@@ -39,10 +49,8 @@ namespace COMP123_S2016_Assignment_6
                     else
                     {
                         WeightTextBox.Focus();
-                    }
-                        
+                    }                    
                 }
-
 
                 try
                 {
@@ -57,10 +65,10 @@ namespace COMP123_S2016_Assignment_6
                     HeightTextBox.Focus();
                 }
 
-
                 height = Convert.ToDouble(HeightTextBox.Text);
                 weight = Convert.ToDouble(WeightTextBox.Text);
 
+                // checking for a 0 or less than 0 values
                 if ((height <= 0 || weight <= 0) || (height <= 0) || (weight <= 0))
                 {
                     MessageBox.Show("Numbers can not be less or equal to 0");
@@ -75,11 +83,11 @@ namespace COMP123_S2016_Assignment_6
                         WeightTextBox.Clear();
                         WeightTextBox.Focus();
                     }
-
                 }
 
                 else {
 
+                    // if imperial radio button ENABLED -> 
                     if (ImperialRadioButton.Checked == true)
                     {
                         bmi = ((weight * 703)) / ((height * height));
@@ -109,6 +117,7 @@ namespace COMP123_S2016_Assignment_6
 
                     }
 
+                    // if metric radio button ENABLED -> 
                     if (MetricRadioButton.Checked == true)
                     {
                         bmi = (weight / (height * height));
@@ -136,10 +145,6 @@ namespace COMP123_S2016_Assignment_6
                             ResultInfoTextBox.Text = Convert.ToString("Obese");
                         }
                     }
-
-
-
-
                 }
             }
             catch (Exception)
@@ -148,28 +153,32 @@ namespace COMP123_S2016_Assignment_6
             }
         }
 
+        // CLEAR BUTTON
         private void ClearButton_Click(object sender, EventArgs e)
         {
             
-            //CLEAR
-            HeightTextBox.Text = "";
-            WeightTextBox.Text = "";
-            ResultTextBox.Text = "";
+            //clear fields
+            HeightTextBox.Clear();
+            WeightTextBox.Clear();
+            ResultTextBox.Clear();
             ResultInfoTextBox.Clear();
 
-            //ENABLE TEXTBOXES
+          
+            //enable textboxes 
             HeightTextBox.Enabled = true;
             WeightTextBox.Enabled = true;
         }
 
+        // LINK LABEL
         private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {           
             this.linkLabel.LinkVisited = true;           
             System.Diagnostics.Process.Start("https://github.com/mirsakiyev");
         }
 
+        // EXIT BUTTON
         private void ExitButton_Click(object sender, EventArgs e)
-        {
+        {           
             Environment.Exit(1);
         }
       
